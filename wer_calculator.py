@@ -179,7 +179,7 @@ with tab3:
     st.subheader("About WER/MER Calculator")
     
     st.markdown("""
-    ### What is this tool?
+    <h3 style='color: #1f77b4;'>What is this tool?</h3>
     This calculator compares reference text (ground truth) with hypothesis text (what was actually transcribed). 
     
     **Common Applications:**
