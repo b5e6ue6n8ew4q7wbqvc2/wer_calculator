@@ -28,7 +28,7 @@ st.set_page_config(page_title="WER Calculator", layout="centered")
 st.title("WER/MER Calculator")
 
 # Create tabs
-tab1, tab2 = st.tabs(["Single Calculation", "Batch Processing"])
+tab1, tab2, tab3 = st.tabs(["Single Calculation", "Batch Processing", "About"])
 
 with tab1:
     # Input fields
@@ -174,3 +174,72 @@ with tab2:
                     
         except Exception as e:
             st.error(f"Error processing file: {str(e)}")
+
+with tab3:
+    st.subheader("About WER/MER Calculator")
+    
+    st.markdown("""
+    ### What is this tool?
+    This calculator compares reference text (ground truth) with hypothesis text (what was actually transcribed). 
+    
+    **Common Applications:**
+    - **Language Learning Assessment**: Scoring elicited imitation and written dictation tasks for ESL learners
+    - **Speech Recognition Evaluation**: Measuring ASR system accuracy
+    - **Transcription Quality Control**: Evaluating human or automated transcription services
+    
+    ### Key Metrics Explained
+    
+    **Word-Level Metrics:**
+    
+    **Match Error Rate (MER) - RECOMMENDED**
+    - **Formula**: MER = (S + D + I) / (S + D + H + I)
+    - More appropriate metric than WER (Morris et al., 2004)
+    - Includes insertions in denominator, preventing overly punitive measurements
+    - **Cannot exceed 1.0**, making it more interpretable
+    - 0.0 = Perfect match, 1.0 = Complete mismatch
+    
+    **Word Error Rate (WER) - Traditional**
+    - **Formula**: WER = (S + D + I) / (S + D + H)
+    - Included for comparison with traditional literature
+    - **Can exceed 1.0** when many insertions occur, making interpretation difficult
+    - Insertions negate hits, leading to overly punitive scores
+    
+    **Key Difference**: MER handles insertions more appropriately by including them in the denominator, while WER allows insertions to inflate the error rate beyond 100%.
+    
+    **Character-Level Metrics:**
+    
+    **Levenshtein Distance**
+    - Character-level edit distance between texts
+    - Raw number: total character insertions/deletions/substitutions needed
+    - Ratio: similarity score from 0.0 (completely different) to 1.0 (identical)
+    - Useful for measuring fine-grained differences in spelling/transcription
+    
+    *Where: S=Substitutions, D=Deletions, I=Insertions, H=Hits (correct matches)*
+    
+    ### Features
+    
+    **Single Calculation Tab:**
+    - Compare two text strings
+    - Visual alignment showing exactly where errors occur
+    - Real-time error type identification (substitutions, insertions, deletions)
+    
+    **Batch Processing Tab:**
+    - Process CSV files with multiple text pairs
+    - Retains all original columns
+    - Adds calculated metrics columns including MER_accuracy percentage
+    - Exports timestamped results file
+    
+    ### Use Cases
+    - **ESL Assessment**: Scoring elicited imitation and dictation tasks
+    - **Language Acquisition Research**: Measuring learner progress over time
+    - **ASR Evaluation**: Measuring speech recognition system performance
+    - **Quality Control**: Evaluating transcription services or student responses
+    
+    ### Technical Notes
+    - Uses the `jiwer` library for WER/MER calculations
+    - Handles empty/missing data gracefully in batch processing
+    - All processing happens in your browser - no data is stored
+    
+    ### Reference
+    Morris, A. C., Maier, V., & Green, P. (2004). From WER and RIL to MER and WIL: improved evaluation measures for connected speech recognition. *Proceedings of Interspeech 2004*.
+    """)
