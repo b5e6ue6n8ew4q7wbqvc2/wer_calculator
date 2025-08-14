@@ -79,7 +79,7 @@ with tab2:
     st.write("**Output:**")
     st.write("The output CSV will contain all original columns plus these new columns:")
     st.code("""- WER: Word Error Rate (0.0 = perfect, higher = more errors)
-- MER: Match Error Rate 
+- MER: Match Error Rate (0.0 = perfect, 1.0 = all error)
 - MER_accuracy: Accuracy as percentage (100 - MER*100)
 - Lev_raw: Levenshtein distance (character-level edits)
 - Lev_ratio: Levenshtein similarity ratio (0.0-1.0)""")
