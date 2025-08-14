@@ -187,9 +187,9 @@ with tab3:
     - **Speech Recognition Evaluation**: Measuring ASR system accuracy
     - **Transcription Quality Control**: Evaluating human or automated transcription services
     
-    ### Key Metrics Explained
+    <h3 style='color: #1f77b4;'>Key Metrics Explained</h3>
     
-    **Word-Level Metrics:**
+    <h4 style='color: #ff7f0e;'>Word-Level Metrics:</h4>
     
     **Match Error Rate (MER) - RECOMMENDED**
     - **Formula**: MER = (S + D + I) / (S + D + H + I)
@@ -206,7 +206,7 @@ with tab3:
     
     **Key Difference**: MER handles insertions more appropriately by including them in the denominator, while WER allows insertions to inflate the error rate beyond 100%.
     
-    **Character-Level Metrics:**
+    <h4 style='color: #ff7f0e;'>Character-Level Metrics:</h4>
     
     **Levenshtein Distance**
     - Character-level edit distance between texts
@@ -216,7 +216,7 @@ with tab3:
     
     *Where: S=Substitutions, D=Deletions, I=Insertions, H=Hits (correct matches)*
     
-    ### Features
+    <h3 style='color: #1f77b4;'>Features</h3>
     
     **Single Calculation Tab:**
     - Compare two text strings
@@ -229,17 +229,17 @@ with tab3:
     - Adds calculated metrics columns including MER_accuracy percentage
     - Exports timestamped results file
     
-    ### Use Cases
+    <h3 style='color: #1f77b4;'>Use Cases</h3>
     - **ESL Assessment**: Scoring elicited imitation and dictation tasks
     - **Language Acquisition Research**: Measuring learner progress over time
     - **ASR Evaluation**: Measuring speech recognition system performance
     - **Quality Control**: Evaluating transcription services or student responses
     
-    ### Technical Notes
+    <h3 style='color: #1f77b4;'>Technical Notes</h3>
     - Uses the `jiwer` library for WER/MER calculations
     - Handles empty/missing data gracefully in batch processing
     - All processing happens in your browser - no data is stored
     
-    ### Reference
+    <h3 style='color: #1f77b4;'>Reference</h3>
     Morris, A. C., Maier, V., & Green, P. (2004). From WER and RIL to MER and WIL: improved evaluation measures for connected speech recognition. *Proceedings of Interspeech 2004*.
-    """)
+    """, unsafe_allow_html=True)
