@@ -68,6 +68,8 @@ Levenshtein Ratio: {lev_ratio:.3f}"""
 
 with tab2:
     st.subheader("Batch Processing")
+
+    st.write("**All processing happens in your browser - no data is stored**")
     
     st.write("**Input Requirements:**")
     st.write("Upload a CSV file with the following required columns:")
