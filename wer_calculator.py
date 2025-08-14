@@ -243,8 +243,9 @@ with tab3:
     st.markdown("<h3 style='color: #1f77b4;'>Technical Notes</h3>", unsafe_allow_html=True)
     st.markdown("""
     - Uses the `jiwer` library for WER/MER calculations
+    - Uses the `Levenshtein` library for Levenshtein calculations
     - Handles empty/missing data gracefully in batch processing
-    - All processing happens in your browser - no data is stored
+    - **All processing happens in your browser - no data is stored**
     """)
     
     st.markdown("<h3 style='color: #1f77b4;'>Reference</h3>", unsafe_allow_html=True)
