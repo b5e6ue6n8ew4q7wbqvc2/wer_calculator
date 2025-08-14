@@ -174,23 +174,23 @@ with tab2:
                     
         except Exception as e:
             st.error(f"Error processing file: {str(e)}")
-
 with tab3:
     st.subheader("About WER/MER Calculator")
     
+    st.markdown("<h3 style='color: #1f77b4;'>What is this tool?</h3>", unsafe_allow_html=True)
     st.markdown("""
-    <h3 style='color: #1f77b4;'>What is this tool?</h3>
     This calculator compares reference text (ground truth) with hypothesis text (what was actually transcribed). 
     
     **Common Applications:**
     - **Language Learning Assessment**: Scoring elicited imitation and written dictation tasks for ESL learners
     - **Speech Recognition Evaluation**: Measuring ASR system accuracy
     - **Transcription Quality Control**: Evaluating human or automated transcription services
+    """)
     
-    <h3 style='color: #1f77b4;'>Key Metrics Explained</h3>
+    st.markdown("<h3 style='color: #1f77b4;'>Key Metrics Explained</h3>", unsafe_allow_html=True)
     
-    <h4 style='color: #ff7f0e;'>Word-Level Metrics:</h4>
-    
+    st.markdown("<h4 style='color: #ff7f0e;'>Word-Level Metrics:</h4>", unsafe_allow_html=True)
+    st.markdown("""
     **Match Error Rate (MER) - RECOMMENDED**
     - **Formula**: MER = (S + D + I) / (S + D + H + I)
     - More appropriate metric than WER (Morris et al., 2004)
@@ -205,9 +205,10 @@ with tab3:
     - Insertions negate hits, leading to overly punitive scores
     
     **Key Difference**: MER handles insertions more appropriately by including them in the denominator, while WER allows insertions to inflate the error rate beyond 100%.
+    """)
     
-    <h4 style='color: #ff7f0e;'>Character-Level Metrics:</h4>
-    
+    st.markdown("<h4 style='color: #ff7f0e;'>Character-Level Metrics:</h4>", unsafe_allow_html=True)
+    st.markdown("""
     **Levenshtein Distance**
     - Character-level edit distance between texts
     - Raw number: total character insertions/deletions/substitutions needed
@@ -215,9 +216,10 @@ with tab3:
     - Useful for measuring fine-grained differences in spelling/transcription
     
     *Where: S=Substitutions, D=Deletions, I=Insertions, H=Hits (correct matches)*
+    """)
     
-    <h3 style='color: #1f77b4;'>Features</h3>
-    
+    st.markdown("<h3 style='color: #1f77b4;'>Features</h3>", unsafe_allow_html=True)
+    st.markdown("""
     **Single Calculation Tab:**
     - Compare two text strings
     - Visual alignment showing exactly where errors occur
@@ -228,18 +230,24 @@ with tab3:
     - Retains all original columns
     - Adds calculated metrics columns including MER_accuracy percentage
     - Exports timestamped results file
+    """)
     
-    <h3 style='color: #1f77b4;'>Use Cases</h3>
+    st.markdown("<h3 style='color: #1f77b4;'>Use Cases</h3>", unsafe_allow_html=True)
+    st.markdown("""
     - **ESL Assessment**: Scoring elicited imitation and dictation tasks
     - **Language Acquisition Research**: Measuring learner progress over time
     - **ASR Evaluation**: Measuring speech recognition system performance
     - **Quality Control**: Evaluating transcription services or student responses
+    """)
     
-    <h3 style='color: #1f77b4;'>Technical Notes</h3>
+    st.markdown("<h3 style='color: #1f77b4;'>Technical Notes</h3>", unsafe_allow_html=True)
+    st.markdown("""
     - Uses the `jiwer` library for WER/MER calculations
     - Handles empty/missing data gracefully in batch processing
     - All processing happens in your browser - no data is stored
+    """)
     
-    <h3 style='color: #1f77b4;'>Reference</h3>
+    st.markdown("<h3 style='color: #1f77b4;'>Reference</h3>", unsafe_allow_html=True)
+    st.markdown("""
     Morris, A. C., Maier, V., & Green, P. (2004). From WER and RIL to MER and WIL: improved evaluation measures for connected speech recognition. *Proceedings of Interspeech 2004*.
-    """, unsafe_allow_html=True)
+    """)
