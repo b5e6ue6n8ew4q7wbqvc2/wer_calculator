@@ -22,10 +22,10 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Set page config
-st.set_page_config(page_title="WER Calculator", layout="centered")
+st.set_page_config(page_title="MER Calculator", layout="centered")
 
 # Title
-st.title("WER/MER Calculator")
+st.title("WER/MER/Levenshtein Calculator")
 
 # Create tabs
 tab1, tab2, tab3 = st.tabs(["Single Calculation", "Batch Processing", "About"])
