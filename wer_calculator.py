@@ -65,24 +65,45 @@ with tab1:
     
     with col1:
         st.markdown("**Character Level**")
-        char_lev = st.checkbox("Levenshtein (~0.01 ms per item)", value=True)
-        char_jaro = st.checkbox("Jaro-Winkler (~0.001 ms per item)", value=False)
-        char_jaccard = st.checkbox("Character Jaccard (~0.06 ms per item)", value=False)
+        char_lev = st.checkbox("Levenshtein (~0.01 ms)", value=True)
+        st.caption("0-∞ | Lower better | Raw edit count")
+        
+        char_jaro = st.checkbox("Jaro-Winkler (~0.001 ms)", value=False)
+        st.caption("0-1 | Higher better | Emphasizes prefixes")
+        
+        char_jaccard = st.checkbox("Character Jaccard (~0.06 ms)", value=False)
+        st.caption("0-1 | Higher better | Character set overlap")
     
     with col2:
         st.markdown("**Word Level**")
-        word_wer = st.checkbox("WER (~0.1 ms per item)", value=True)
-        word_mer = st.checkbox("MER (~0.1 ms per item)", value=True)
-        word_per = st.checkbox("PER (~0.06 ms per item)", value=False)
-        word_jaccard = st.checkbox("Word Jaccard (~0.02 ms per item)", value=False)
-        word_lcs = st.checkbox("LCS Ratio (~0.11 ms per item)", value=False)
-        word_token_sort = st.checkbox("Token Sort (~0.03 ms per item)", value=False)
-        word_bleu = st.checkbox("BLEU (~0.21 ms per item)", value=False)
+        word_wer = st.checkbox("WER (~0.1 ms)", value=True)
+        st.caption("0-∞ | Lower better | Can exceed 1.0")
+        
+        word_mer = st.checkbox("MER (~0.1 ms)", value=True)
+        st.caption("0-1 | Lower better | Bounded error rate")
+        
+        word_per = st.checkbox("PER (~0.06 ms)", value=False)
+        st.caption("0-∞ | Lower better | Ignores word order")
+        
+        word_jaccard = st.checkbox("Word Jaccard (~0.02 ms)", value=False)
+        st.caption("0-1 | Higher better | Word set overlap")
+        
+        word_lcs = st.checkbox("LCS Ratio (~0.11 ms)", value=False)
+        st.caption("0-1 | Higher better | Longest common subseq")
+        
+        word_token_sort = st.checkbox("Token Sort (~0.03 ms)", value=False)
+        st.caption("0-1 | Higher better | Fuzzy matching")
+        
+        word_bleu = st.checkbox("BLEU (~0.21 ms)", value=False)
+        st.caption("0-1 | Higher better | Tends to score low")
     
     with col3:
         st.markdown("**Semantic Level**")
-        sem_meteor = st.checkbox("METEOR (~0.16 ms per item)", value=False)
-        sem_sentence = st.checkbox("Sentence Similarity (~17 ms - slow per item)", value=False)
+        sem_meteor = st.checkbox("METEOR (~0.16 ms)", value=False)
+        st.caption("0-1 | Higher better | Uses synonyms/stems")
+        
+        sem_sentence = st.checkbox("Sentence Similarity (~17 ms - slow)", value=False)
+        st.caption("0-1 | Higher better | Semantic meaning")
         if sem_sentence:
             st.caption("⚠️ Slow on first run (loads model)")
     
@@ -222,24 +243,45 @@ with tab2:
     
     with col1:
         st.markdown("**Character Level**")
-        batch_char_lev = st.checkbox("Levenshtein (~0.01 ms per item)", value=True, key="batch_char_lev")
-        batch_char_jaro = st.checkbox("Jaro-Winkler (~0.001 ms per item)", value=False, key="batch_char_jaro")
-        batch_char_jaccard = st.checkbox("Character Jaccard (~0.06 ms per item)", value=False, key="batch_char_jaccard")
+        batch_char_lev = st.checkbox("Levenshtein (~0.01 ms)", value=True, key="batch_char_lev")
+        st.caption("0-∞ | Lower better | Raw edit count")
+        
+        batch_char_jaro = st.checkbox("Jaro-Winkler (~0.001 ms)", value=False, key="batch_char_jaro")
+        st.caption("0-1 | Higher better | Emphasizes prefixes")
+        
+        batch_char_jaccard = st.checkbox("Character Jaccard (~0.06 ms)", value=False, key="batch_char_jaccard")
+        st.caption("0-1 | Higher better | Character set overlap")
     
     with col2:
         st.markdown("**Word Level**")
-        batch_word_wer = st.checkbox("WER (~0.1 ms per item)", value=True, key="batch_word_wer")
-        batch_word_mer = st.checkbox("MER (~0.1 ms per item)", value=True, key="batch_word_mer")
-        batch_word_per = st.checkbox("PER (~0.06 ms per item)", value=False, key="batch_word_per")
-        batch_word_jaccard = st.checkbox("Word Jaccard (~0.02 ms per item)", value=False, key="batch_word_jaccard")
-        batch_word_lcs = st.checkbox("LCS Ratio (~0.11 ms per item)", value=False, key="batch_word_lcs")
-        batch_word_token_sort = st.checkbox("Token Sort (~0.03 ms per item)", value=False, key="batch_word_token_sort")
-        batch_word_bleu = st.checkbox("BLEU (~0.21 ms per item)", value=False, key="batch_word_bleu")
+        batch_word_wer = st.checkbox("WER (~0.1 ms)", value=True, key="batch_word_wer")
+        st.caption("0-∞ | Lower better | Can exceed 1.0")
+        
+        batch_word_mer = st.checkbox("MER (~0.1 ms)", value=True, key="batch_word_mer")
+        st.caption("0-1 | Lower better | Bounded error rate")
+        
+        batch_word_per = st.checkbox("PER (~0.06 ms)", value=False, key="batch_word_per")
+        st.caption("0-∞ | Lower better | Ignores word order")
+        
+        batch_word_jaccard = st.checkbox("Word Jaccard (~0.02 ms)", value=False, key="batch_word_jaccard")
+        st.caption("0-1 | Higher better | Word set overlap")
+        
+        batch_word_lcs = st.checkbox("LCS Ratio (~0.11 ms)", value=False, key="batch_word_lcs")
+        st.caption("0-1 | Higher better | Longest common subseq")
+        
+        batch_word_token_sort = st.checkbox("Token Sort (~0.03 ms)", value=False, key="batch_word_token_sort")
+        st.caption("0-1 | Higher better | Fuzzy matching")
+        
+        batch_word_bleu = st.checkbox("BLEU (~0.21 ms)", value=False, key="batch_word_bleu")
+        st.caption("0-1 | Higher better | Tends to score low")
     
     with col3:
         st.markdown("**Semantic Level**")
-        batch_sem_meteor = st.checkbox("METEOR (~0.16 ms per item)", value=False, key="batch_sem_meteor")
-        batch_sem_sentence = st.checkbox("Sentence Similarity (~17 ms per item - slow)", value=False, key="batch_sem_sentence")
+        batch_sem_meteor = st.checkbox("METEOR (~0.16 ms)", value=False, key="batch_sem_meteor")
+        st.caption("0-1 | Higher better | Uses synonyms/stems")
+        
+        batch_sem_sentence = st.checkbox("Sentence Similarity (~17 ms - slow)", value=False, key="batch_sem_sentence")
+        st.caption("0-1 | Higher better | Semantic meaning")
         if batch_sem_sentence:
             st.caption("⚠️ Slow for large files")
     
