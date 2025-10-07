@@ -289,8 +289,8 @@ with tab2:
     
     st.write("**Input Requirements:**")
     st.write("Upload a CSV file with the following required columns:")
-    st.code("""- ground_truth: Reference text (what should have been said)
-- hypothesis: Hypothesis text (what was actually transcribed)""")
+    st.code("""- ground_truth: (Reference text - what should have been said)
+- hypothesis: (Hypothesis text - what was actually transcribed)""")
     
     st.write("**Output:**")
     st.write("The output CSV will contain all original columns plus selected metric columns")
