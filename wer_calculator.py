@@ -282,8 +282,8 @@ with tab2:
         
         batch_sem_sentence = st.checkbox("Sentence Similarity", value=False, key="batch_sem_sentence")
         st.caption("🐢 ~17 ms/item (slow)")
-            if batch_sem_sentence:
-                st.caption("⚠️ Slow for large files")
+        if batch_sem_sentence:
+            st.caption("⚠️ Slow for large files")
     
     st.markdown("---")
     
