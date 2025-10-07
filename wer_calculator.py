@@ -242,48 +242,48 @@ with tab2:
     col1, col2, col3 = st.columns(3)
     
     with col1:
-    st.markdown("**Character Level**")
-    batch_char_lev = st.checkbox("Levenshtein", value=True, key="batch_char_lev")
-    st.caption("⚡ ~0.01 ms/item")
+        st.markdown("**Character Level**")
+        batch_char_lev = st.checkbox("Levenshtein", value=True, key="batch_char_lev")
+        st.caption("⚡ ~0.01 ms/item")
     
-    batch_char_jaro = st.checkbox("Jaro-Winkler", value=False, key="batch_char_jaro")
-    st.caption("⚡ ~0.001 ms/item")
+        batch_char_jaro = st.checkbox("Jaro-Winkler", value=False, key="batch_char_jaro")
+        st.caption("⚡ ~0.001 ms/item")
     
-    batch_char_jaccard = st.checkbox("Character Jaccard", value=False, key="batch_char_jaccard")
-    st.caption("⚡ ~0.06 ms/item")
+        batch_char_jaccard = st.checkbox("Character Jaccard", value=False, key="batch_char_jaccard")
+        st.caption("⚡ ~0.06 ms/item")
 
-with col2:
-    st.markdown("**Word Level**")
-    batch_word_wer = st.checkbox("WER", value=True, key="batch_word_wer")
-    st.caption("⚡ ~0.1 ms/item")
+    with col2:
+        st.markdown("**Word Level**")
+        batch_word_wer = st.checkbox("WER", value=True, key="batch_word_wer")
+        st.caption("⚡ ~0.1 ms/item")
+        
+        batch_word_mer = st.checkbox("MER", value=True, key="batch_word_mer")
+        st.caption("⚡ ~0.1 ms/item")
+        
+        batch_word_per = st.checkbox("PER", value=False, key="batch_word_per")
+        st.caption("⚡ ~0.06 ms/item")
+        
+        batch_word_jaccard = st.checkbox("Word Jaccard", value=False, key="batch_word_jaccard")
+        st.caption("⚡ ~0.02 ms/item")
+        
+        batch_word_lcs = st.checkbox("LCS Ratio", value=False, key="batch_word_lcs")
+        st.caption("⚡ ~0.11 ms/item")
+        
+        batch_word_token_sort = st.checkbox("Token Sort", value=False, key="batch_word_token_sort")
+        st.caption("⚡ ~0.03 ms/item")
+        
+        batch_word_bleu = st.checkbox("BLEU", value=False, key="batch_word_bleu")
+        st.caption("⚡ ~0.21 ms/item")
     
-    batch_word_mer = st.checkbox("MER", value=True, key="batch_word_mer")
-    st.caption("⚡ ~0.1 ms/item")
-    
-    batch_word_per = st.checkbox("PER", value=False, key="batch_word_per")
-    st.caption("⚡ ~0.06 ms/item")
-    
-    batch_word_jaccard = st.checkbox("Word Jaccard", value=False, key="batch_word_jaccard")
-    st.caption("⚡ ~0.02 ms/item")
-    
-    batch_word_lcs = st.checkbox("LCS Ratio", value=False, key="batch_word_lcs")
-    st.caption("⚡ ~0.11 ms/item")
-    
-    batch_word_token_sort = st.checkbox("Token Sort", value=False, key="batch_word_token_sort")
-    st.caption("⚡ ~0.03 ms/item")
-    
-    batch_word_bleu = st.checkbox("BLEU", value=False, key="batch_word_bleu")
-    st.caption("⚡ ~0.21 ms/item")
-
-with col3:
-    st.markdown("**Semantic Level**")
-    batch_sem_meteor = st.checkbox("METEOR", value=False, key="batch_sem_meteor")
-    st.caption("⚡ ~0.16 ms/item")
-    
-    batch_sem_sentence = st.checkbox("Sentence Similarity", value=False, key="batch_sem_sentence")
-    st.caption("🐢 ~17 ms/item (slow)")
-        if batch_sem_sentence:
-            st.caption("⚠️ Slow for large files")
+    with col3:
+        st.markdown("**Semantic Level**")
+        batch_sem_meteor = st.checkbox("METEOR", value=False, key="batch_sem_meteor")
+        st.caption("⚡ ~0.16 ms/item")
+        
+        batch_sem_sentence = st.checkbox("Sentence Similarity", value=False, key="batch_sem_sentence")
+        st.caption("🐢 ~17 ms/item (slow)")
+            if batch_sem_sentence:
+                st.caption("⚠️ Slow for large files")
     
     st.markdown("---")
     
