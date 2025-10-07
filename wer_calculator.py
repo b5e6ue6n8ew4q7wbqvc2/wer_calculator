@@ -139,8 +139,8 @@ with tab1:
                     ref_sorted = sorted(ref_words)
                     hyp_sorted = sorted(hyp_words)
                     if len(ref_sorted) > 0:
-                        per_out = jiwer.compute_measures(' '.join(ref_sorted), ' '.join(hyp_sorted))
-                        results.append(f"PER: {per_out['wer']:.4f}")
+                        per_out = jiwer.process_words([' '.join(ref_sorted)], [' '.join(hyp_sorted)])
+                        results.append(f"PER: {per_out.wer:.4f}")
                     else:
                         results.append(f"PER: N/A")
                 
@@ -355,8 +355,8 @@ with tab2:
                                     ref_sorted = sorted(ref_words)
                                     hyp_sorted = sorted(hyp_words)
                                     if len(ref_sorted) > 0:
-                                        per_out = jiwer.compute_measures(' '.join(ref_sorted), ' '.join(hyp_sorted))
-                                        row_results['PER'] = per_out['wer']
+                                        per_out = jiwer.process_words([' '.join(ref_sorted)], [' '.join(hyp_sorted)])
+                                        row_results['PER'] = per_out.wer
                                     else:
                                         row_results['PER'] = 0.0 if len(hyp_sorted) == 0 else 1.0
                                 
