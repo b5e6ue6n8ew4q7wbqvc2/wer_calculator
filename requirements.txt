@@ -6,4 +6,5 @@ textdistance
 rapidfuzz
 nltk
 sentence-transformers
+torch
 numpy
