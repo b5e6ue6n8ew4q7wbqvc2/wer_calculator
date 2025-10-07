@@ -540,7 +540,54 @@ with tab3:
     - **All processing happens in your browser - no data is stored**
     """)
     
-    st.markdown("<h3 style='color: #1f77b4;'>Reference</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='color: #1f77b4;'>References & Further Reading</h3>", unsafe_allow_html=True)
+    
+    st.markdown("<h4 style='color: #ff7f0e;'>Character-Level Metrics:</h4>", unsafe_allow_html=True)
     st.markdown("""
-    Morris, A. C., Maier, V., & Green, P. (2004). From WER and RIL to MER and WIL: improved evaluation measures for connected speech recognition. *Proceedings of Interspeech 2004*.
+    **Levenshtein Distance:**
+    - Levenshtein, V. I. (1966). Binary codes capable of correcting deletions, insertions, and reversals. *Soviet Physics Doklady*, 10(8), 707-710.
+    
+    **Jaro-Winkler:**
+    - Winkler, W. E. (1990). String comparator metrics and enhanced decision rules in the Fellegi-Sunter model of record linkage. *Proceedings of the Section on Survey Research Methods*, 354-359.
+    
+    **Jaccard Index:**
+    - Jaccard, P. (1901). Étude comparative de la distribution florale dans une portion des Alpes et des Jura. *Bulletin de la Société Vaudoise des Sciences Naturelles*, 37, 547-579.
+    """)
+    
+    st.markdown("<h4 style='color: #ff7f0e;'>Word-Level Metrics:</h4>", unsafe_allow_html=True)
+    st.markdown("""
+    **WER (Word Error Rate):**
+    - Standard metric in speech recognition. See: Klakow, D., & Peters, J. (2002). Testing the correlation of word error rate and perplexity. *Speech Communication*, 38(1-2), 19-28.
+    
+    **MER (Match Error Rate):**
+    - Morris, A. C., Maier, V., & Green, P. (2004). From WER and RIL to MER and WIL: improved evaluation measures for connected speech recognition. *Proceedings of Interspeech 2004*.
+    
+    **PER (Position-independent Error Rate):**
+    - Tillmann, C., Vogel, S., Ney, H., Zubiaga, A., & Sawaf, H. (1997). Accelerated DP based search for statistical translation. *Proceedings of European Conference on Speech Communication and Technology*.
+    
+    **BLEU:**
+    - Papineni, K., Roukos, S., Ward, T., & Zhu, W. J. (2002). BLEU: a method for automatic evaluation of machine translation. *Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics*, 311-318.
+    
+    **Longest Common Subsequence (LCS):**
+    - Standard algorithm in computer science. See: Bergroth, L., Hakonen, H., & Raita, T. (2000). A survey of longest common subsequence algorithms. *Proceedings of the Seventh International Symposium on String Processing and Information Retrieval*, 39-48.
+    """)
+    
+    st.markdown("<h4 style='color: #ff7f0e;'>Semantic-Level Metrics:</h4>", unsafe_allow_html=True)
+    st.markdown("""
+    **METEOR:**
+    - Banerjee, S., & Lavie, A. (2005). METEOR: An automatic metric for MT evaluation with improved correlation with human judgments. *Proceedings of the ACL Workshop on Intrinsic and Extrinsic Evaluation Measures for Machine Translation and/or Summarization*, 65-72.
+    
+    **Sentence Transformers (Semantic Similarity):**
+    - Reimers, N., & Gurevych, I. (2019). Sentence-BERT: Sentence embeddings using Siamese BERT-networks. *Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)*, 3982-3992.
+    - Model: [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
+    """)
+    
+    st.markdown("<h4 style='color: #ff7f0e;'>Software Libraries:</h4>", unsafe_allow_html=True)
+    st.markdown("""
+    - **jiwer**: [https://github.com/jitsi/jiwer](https://github.com/jitsi/jiwer) - WER, MER calculation
+    - **python-Levenshtein**: [https://github.com/maxbachmann/Levenshtein](https://github.com/maxbachmann/Levenshtein)
+    - **RapidFuzz**: [https://github.com/maxbachmann/RapidFuzz](https://github.com/maxbachmann/RapidFuzz) - Token Sort Ratio
+    - **textdistance**: [https://github.com/life4/textdistance](https://github.com/life4/textdistance) - Various distance metrics
+    - **NLTK**: [https://www.nltk.org/](https://www.nltk.org/) - BLEU, METEOR
+    - **Sentence Transformers**: [https://www.sbert.net/](https://www.sbert.net/) - Semantic similarity
     """)
