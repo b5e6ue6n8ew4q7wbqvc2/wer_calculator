@@ -2,3 +2,8 @@ streamlit
 jiwer
 python-Levenshtein
 pandas
+textdistance
+rapidfuzz
+nltk
+sentence-transformers
+numpy
